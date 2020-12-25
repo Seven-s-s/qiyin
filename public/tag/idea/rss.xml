@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>七音 • Posts by &#34;idea&#34; tag</title>
+        <link>https://qiyins.cn</link>
+        <description>路漫漫其修远兮，吾将上下而求索</description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 17 Dec 2020 12:38:00 +0800</pubDate>
+        <lastBuildDate>Thu, 17 Dec 2020 12:38:00 +0800</lastBuildDate>
+        <category>hexo</category>
+        <category>算法</category>
+        <category>Linux</category>
+        <category>MySQL</category>
+        <category>MongoDB</category>
+        <category>Redis</category>
+        <category>git</category>
+        <category>Idea</category>
+        <category>Typora</category>
+        <category>Java</category>
+        <category>面试题</category>
+        <category>RabbitMQ</category>
+        <category>设计模式</category>
+        <category>Shiro</category>
+        <item>
+            <guid isPermalink="true">https://qiyins.cn/computer/course-2/idea/</guid>
+            <title>Idea</title>
+            <link>https://qiyins.cn/computer/course-2/idea/</link>
+            <category>Idea</category>
+            <pubDate>Thu, 17 Dec 2020 12:38:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;快捷方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#快捷方法&#34;&gt;#&lt;/a&gt; 快捷方法&lt;/h1&gt;
+&lt;h2 id=&#34;补全for循环&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#补全for循环&#34;&gt;#&lt;/a&gt; 补全 for 循环&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;length.for&lt;br /&gt;
+for(int i=0;i&amp;lt;length;i++){}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;补全返回类型及变量&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#补全返回类型及变量&#34;&gt;#&lt;/a&gt; 补全返回类型及变量&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;方法 ().var&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;输出&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#输出&#34;&gt;#&lt;/a&gt; 输出&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;sout&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;System.out.println();&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;main方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#main方法&#34;&gt;#&lt;/a&gt; main 方法&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;psvm 或 main&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;方法注释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法注释&#34;&gt;#&lt;/a&gt; 方法注释&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在方法上面一行输入 /** 回车，就会出现以下注释&lt;/p&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;/**&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     * &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     * @param &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     * @param &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     * @return&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     */&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/blockquote&gt;
+&lt;h1 id=&#34;快捷键&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#快捷键&#34;&gt;#&lt;/a&gt; 快捷键&lt;/h1&gt;
+&lt;h2 id=&#34;代码快捷键&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#代码快捷键&#34;&gt;#&lt;/a&gt; 代码快捷键&lt;/h2&gt;
+&lt;h3 id=&#34;重写方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#重写方法&#34;&gt;#&lt;/a&gt; 重写方法&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+O&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;构造函数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#构造函数&#34;&gt;#&lt;/a&gt; 构造函数&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ALT+INSERT&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;自动导入变量定义&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自动导入变量定义&#34;&gt;#&lt;/a&gt; 自动导入变量定义&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+Alt+V&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;大小写转化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#大小写转化&#34;&gt;#&lt;/a&gt; 大小写转化&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+Shift+U&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;查看源码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看源码&#34;&gt;#&lt;/a&gt; 查看源码&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+B&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;纠错导包提示&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#纠错导包提示&#34;&gt;#&lt;/a&gt; 纠错，导包，提示&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Alt+Enter&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;功能快捷键&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#功能快捷键&#34;&gt;#&lt;/a&gt; 功能快捷键&lt;/h2&gt;
+&lt;h3 id=&#34;格式化代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#格式化代码&#34;&gt;#&lt;/a&gt; 格式化代码&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+Shift+L&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;删除一行&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除一行&#34;&gt;#&lt;/a&gt; 删除一行&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+y&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;注释多行&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注释多行&#34;&gt;#&lt;/a&gt; 注释多行&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+Shift+/&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;注释单行&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注释单行&#34;&gt;#&lt;/a&gt; 注释单行&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+/&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;复制到下一行&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#复制到下一行&#34;&gt;#&lt;/a&gt; 复制到下一行&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+D&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;全局搜索&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#全局搜索&#34;&gt;#&lt;/a&gt; 全局搜索&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;CTRL+SHIFT +F&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;上下移一行&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#上下移一行&#34;&gt;#&lt;/a&gt; 上 / 下移一行&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Alt+Shift+Up/Down&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;替换文本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#替换文本&#34;&gt;#&lt;/a&gt; 替换文本&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+R&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;方法展开-折叠&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法展开-折叠&#34;&gt;#&lt;/a&gt; 方法展开、折叠&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;当前方法&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+&amp;quot;+/-&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;全部&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+Shift+&amp;quot;+/-&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;其他快捷键&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#其他快捷键&#34;&gt;#&lt;/a&gt; 其他快捷键&lt;/h1&gt;
+&lt;h2 id=&#34;复制路径&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#复制路径&#34;&gt;#&lt;/a&gt; 复制路径&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ctrl+Shift+C&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;其他操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#其他操作&#34;&gt;#&lt;/a&gt; 其他操作&lt;/h1&gt;
+&lt;h2 id=&#34;设置作者注释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#设置作者注释&#34;&gt;#&lt;/a&gt; 设置作者注释&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;准备好模板&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;/**&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; * @Author 张三&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; * @Description &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; * @Date $date$ $time$&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; **/&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;添加模板&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;点击 File → settings→Editor→live Templates&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;点击 “+”，先添加一个群组，点击 Template Group，取名为 MyTemplate&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加一个模板名称，点击 Live Template&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Abbreviation 框填入 “*”，Description 框填入 “注释模板”，Template text 框填入刚才的模板&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击 Define，选择 Java→Declaration&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击 Edit variables 进行如下配置，点击 OK&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Name&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Expression&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;date&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;date()&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;time&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;time()&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;测试&lt;/p&gt;
+&lt;p&gt;在类名前输入 * 再按下 Tab 键，如下便成功&lt;/p&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;/**&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; * @Author 张三&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; * @Description &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; * @Date 2020/10/27 16:06&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; **/&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在方法名前面输入 @Param 跟 @return 就会有值&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;设置方法注释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#设置方法注释&#34;&gt;#&lt;/a&gt; 设置方法注释&lt;/h2&gt;
+&lt;p&gt;此操作在方法外也能获取参数&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;准备好模板&lt;/p&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$params$&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token annotation punctuation&#34;&gt;@return&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token annotation punctuation&#34;&gt;@Author&lt;/span&gt; zhangsan &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token annotation punctuation&#34;&gt;@Date&lt;/span&gt; $date$       &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加模板&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Abbreviation 框填入 &amp;quot;method&amp;quot;(自定义)&lt;/p&gt;
+&lt;p&gt;Options 下面的 Expand with 设置为 Enter&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Name&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Expression&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;params&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;return&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;methodReturnType()&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;params 中 Expression 填入以下脚本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;groovyScript&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;def result=&#39;&#39;; def params=\&#34;$&amp;#123;_1&amp;#125;\&#34;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;,&#39;).toList(); for(i = 0; i &amp;lt; params.size(); i++) &amp;#123;result+=&#39; * @param &#39; + params[i] + ((i &amp;lt; params.size() - 1) ? &#39;\\n&#39; : &#39;&#39;)&amp;#125;; return result&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;methodParameters&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;测试&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;idea 默认的生成注释方式为 /*+ 模板名 + 快捷键&lt;/p&gt;
+&lt;p&gt;在方法名上输入 /*method+enter&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;/**&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;* @param 参数&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;* @return 结果&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;* @Author zhangsan&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;* @Date 2020/11/18&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;**/&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

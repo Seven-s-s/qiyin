@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>七音 • Posts by &#34;linux&#34; tag</title>
+        <link>https://qiyins.cn</link>
+        <description>路漫漫其修远兮，吾将上下而求索</description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 01 Oct 2020 12:47:00 +0800</pubDate>
+        <lastBuildDate>Thu, 01 Oct 2020 12:47:00 +0800</lastBuildDate>
+        <category>hexo</category>
+        <category>算法</category>
+        <category>Linux</category>
+        <category>MySQL</category>
+        <category>MongoDB</category>
+        <category>Redis</category>
+        <category>git</category>
+        <category>Idea</category>
+        <category>Typora</category>
+        <category>Java</category>
+        <category>面试题</category>
+        <category>RabbitMQ</category>
+        <category>设计模式</category>
+        <category>Shiro</category>
+        <item>
+            <guid isPermalink="true">https://qiyins.cn/computer/linux/</guid>
+            <title>Linux</title>
+            <link>https://qiyins.cn/computer/linux/</link>
+            <category>Linux</category>
+            <pubDate>Thu, 01 Oct 2020 12:47:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;常用命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常用命令&#34;&gt;#&lt;/a&gt; 常用命令&lt;/h1&gt;
+&lt;h2 id=&#34;查看当前下的路径&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看当前下的路径&#34;&gt;#&lt;/a&gt; 查看当前下的路径&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pwd&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;列出所有文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#列出所有文件&#34;&gt;#&lt;/a&gt; 列出所有文件&lt;/h2&gt;
+&lt;p&gt;ls&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;-l	以列表的样式列出所有文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-a	显示隐藏文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-l -h 或者 - lh	显示文件大小&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;*&lt;strong&gt;.txt	查找以 txt 结尾的文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;em&gt;a.&lt;/em&gt;	查找以 a 开头的文件&lt;/em&gt; *&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;​	*	0 个或任意多个字符&lt;/p&gt;
+&lt;p&gt;​	？	一个字符&lt;/p&gt;
+&lt;p&gt;​	[abcd]	abcd 中的一个字符&lt;/p&gt;
+&lt;p&gt;​	[a-z]	a 到 z 中的一个字符&lt;/p&gt;
+&lt;h2 id=&#34;进入文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进入文件&#34;&gt;#&lt;/a&gt; 进入文件&lt;/h2&gt;
+&lt;p&gt;cd&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;​	&lt;strong&gt;..	返回上一级&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​	&lt;strong&gt;-	在两个目录来回切换&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​	&lt;strong&gt;~	返回根目录&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;自动补全&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自动补全&#34;&gt;#&lt;/a&gt; 自动补全&lt;/h2&gt;
+&lt;p&gt;tab&lt;/p&gt;
+&lt;h2 id=&#34;上下键&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#上下键&#34;&gt;#&lt;/a&gt; 上下键&lt;/h2&gt;
+&lt;p&gt;获取上次的命令，获取下次的命令&lt;/p&gt;
+&lt;h2 id=&#34;清屏&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清屏&#34;&gt;#&lt;/a&gt; 清屏&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;clear&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;查看ip地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看ip地址&#34;&gt;#&lt;/a&gt; 查看 IP 地址&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ip addr&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;端口号&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#端口号&#34;&gt;#&lt;/a&gt; 端口号&lt;/h2&gt;
+&lt;h3 id=&#34;查询被占用的端口号&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查询被占用的端口号&#34;&gt;#&lt;/a&gt; 查询被占用的端口号&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ps aux&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;查询某个应用占用的端口号&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查询某个应用占用的端口号&#34;&gt;#&lt;/a&gt; 查询某个应用占用的端口号&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ps -ef | grep 应用名&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;文件操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件操作&#34;&gt;#&lt;/a&gt; 文件操作&lt;/h1&gt;
+&lt;h2 id=&#34;创建文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建文件&#34;&gt;#&lt;/a&gt; 创建文件&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;touch&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;文件名	创建文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;. 文件名	创建隐藏文件&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;创建文件夹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建文件夹&#34;&gt;#&lt;/a&gt; 创建文件夹&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;mkdir&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;删除&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除&#34;&gt;#&lt;/a&gt; 删除&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;rm&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;-d 或 - r 文件夹名	删除文件夹&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;移动&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#移动&#34;&gt;#&lt;/a&gt; 移动&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;mv&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;mv a b	将 a 文件移动到 b 文件夹下&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;mv a ./b	将 a 文件移动到当前目录并改名&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;复制&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#复制&#34;&gt;#&lt;/a&gt; &lt;strong&gt;复制&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;cp&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;cp a b	将 a 文件复制到 b 文件夹下&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;编辑&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#编辑&#34;&gt;#&lt;/a&gt; 编辑&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;vi&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;i	进行编辑&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;q	推出程序&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;w	保存文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;按下 ESC，输入:wq 保存&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;查看文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看文件&#34;&gt;#&lt;/a&gt; 查看文件&lt;/h2&gt;
+&lt;p&gt;tail/cat&lt;/p&gt;
+&lt;h2 id=&#34;设置为可执行文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#设置为可执行文件&#34;&gt;#&lt;/a&gt; 设置为可执行文件&lt;/h2&gt;
+&lt;p&gt;以 ch 为后缀的文件&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;chmod +x 文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;管理员操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#管理员操作&#34;&gt;#&lt;/a&gt; 管理员操作&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;su	切换到超级用户&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;reboot	重启&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;halt	关机&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;修改密码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改密码&#34;&gt;#&lt;/a&gt; 修改密码&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;passwd&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;下载命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载命令&#34;&gt;#&lt;/a&gt; 下载命令&lt;/h1&gt;
+&lt;h2 id=&#34;下载vim编辑器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载vim编辑器&#34;&gt;#&lt;/a&gt; 下载 vim 编辑器&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;yum -y install vim&lt;/strong&gt;*&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;下载jdk18&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载jdk18&#34;&gt;#&lt;/a&gt; 下载 jdk1.8&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;em&gt;yum install java-1.8.0-openjdk&lt;/em&gt; -y&lt;/em&gt;*&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;下载git&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载git&#34;&gt;#&lt;/a&gt; 下载 Git&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;yum install git&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;虚拟机&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#虚拟机&#34;&gt;#&lt;/a&gt; 虚拟机&lt;/h1&gt;
+&lt;h2 id=&#34;共享文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#共享文件&#34;&gt;#&lt;/a&gt; 共享文件&lt;/h2&gt;
+&lt;p&gt;创建一个共享文件夹，该文件在虚拟机上 mnt/hgfs 文件夹下&lt;/p&gt;
+&lt;p&gt;如果 /mnt 目录下有 hgfs，但 hgfs 下没有共享文件，输入&lt;strong&gt; vmware-hgfsclient&lt;/strong&gt; 时却能看到共享文件夹名称，那下载工具&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;yum install -y open-vm-tools-devel&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后执行以下命令就 ok 了&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;vmhgfs-fuse .host:/ /mnt/hgfs&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;云服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#云服务器&#34;&gt;#&lt;/a&gt; 云服务器&lt;/h1&gt;
+&lt;h2 id=&#34;持久运行springboot项目&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#持久运行springboot项目&#34;&gt;#&lt;/a&gt; 持久运行 springboot 项目&lt;/h2&gt;
+&lt;p&gt;命令&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;nohup java -jar xxx.jar &amp;gt; system.log 2&amp;gt;&amp;amp;1 &amp;amp;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;nohub 一般形式为如下:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;nohub command &amp;amp;&lt;/p&gt;
+&lt;p&gt;但是当你退出账户时，仍然会停止对应的进程。&lt;/p&gt;
+&lt;p&gt;所以这就需要你在后面添加 2&amp;gt;&amp;amp;1 &amp;amp;(相当于正常退出，仍保持命令在后台运行)&lt;/p&gt;
+&lt;p&gt;上面这个 command 正好对上 java -jar blog.jar &amp;gt; system.log&lt;/p&gt;
+&lt;p&gt;“&amp;gt;” 输出重定向，通常用于输出日志&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ps -a 可以查看 Java 程序运行的进程号，使用 kill -9 进程号可以杀死进程。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

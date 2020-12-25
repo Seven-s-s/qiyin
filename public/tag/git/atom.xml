@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://qiyins.cn</id>
+    <title>七音 • Posts by &#34;git&#34; tag</title>
+    <link href="https://qiyins.cn" />
+    <updated>2020-12-17T04:36:00.000Z</updated>
+    <category term="hexo" />
+    <category term="算法" />
+    <category term="Linux" />
+    <category term="MySQL" />
+    <category term="MongoDB" />
+    <category term="Redis" />
+    <category term="git" />
+    <category term="Idea" />
+    <category term="Typora" />
+    <category term="Java" />
+    <category term="面试题" />
+    <category term="RabbitMQ" />
+    <category term="设计模式" />
+    <category term="Shiro" />
+    <entry>
+        <id>https://qiyins.cn/computer/course-2/git/</id>
+        <title>Git</title>
+        <link rel="alternate" href="https://qiyins.cn/computer/course-2/git/"/>
+        <content type="html">&lt;h1 id=&#34;创建仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建仓库&#34;&gt;#&lt;/a&gt; 创建仓库&lt;/h1&gt;
+&lt;h2 id=&#34;初始化仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#初始化仓库&#34;&gt;#&lt;/a&gt; 初始化仓库&lt;/h2&gt;
+&lt;p&gt;使用当前目录作为仓库，进行初始化&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git init&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;执行完之后，当前目录会生成一个.git 目录&lt;/p&gt;
+&lt;h2 id=&#34;拷贝&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#拷贝&#34;&gt;#&lt;/a&gt; 拷贝&lt;/h2&gt;
+&lt;p&gt;从 git 仓库拷贝项目&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git clone &amp;lt;repo&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;克隆到指定的目录&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git clone &amp;lt;repo&amp;gt; &amp;lt;directory&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;repo：Git 仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;directory：本地目录&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置&#34;&gt;#&lt;/a&gt; 配置&lt;/h2&gt;
+&lt;h3 id=&#34;语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#语法&#34;&gt;#&lt;/a&gt; 语法&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git config&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;显示当前的-git-配置信息&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#显示当前的-git-配置信息&#34;&gt;#&lt;/a&gt; 显示当前的 git 配置信息&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git config --list&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;credential.helper=osxkeychain&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;core.repositoryformatversion=0&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;core.filemode=true&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;core.bare=false&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;core.logallrefupdates=true&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;core.ignorecase=true&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;core.precomposeunicode=true&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;编辑-git-配置文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#编辑-git-配置文件&#34;&gt;#&lt;/a&gt; 编辑 git 配置文件&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git config -e    # 针对当前仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;git config -e --global   # 针对系统上所有仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;设置提交代码时的用户信息&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#设置提交代码时的用户信息&#34;&gt;#&lt;/a&gt; 设置提交代码时的用户信息&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git config --global &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3VzZXIubmFtZQ==&#34;&gt;user.name&lt;/span&gt; &amp;quot;用户名&amp;quot;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;git config --global user.email  邮箱&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;如果去掉 --global 参数只对当前仓库有效&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;基本指令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本指令&#34;&gt;#&lt;/a&gt; 基本指令&lt;/h1&gt;
+&lt;h2 id=&#34;添加文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加文件&#34;&gt;#&lt;/a&gt; 添加文件&lt;/h2&gt;
+&lt;h3 id=&#34;添加一个或多个文件到暂存区&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加一个或多个文件到暂存区&#34;&gt;#&lt;/a&gt; 添加一个或多个文件到暂存区&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git add [file1] [file2] ...&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;添加指定目录到暂存区包括子目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加指定目录到暂存区包括子目录&#34;&gt;#&lt;/a&gt; 添加指定目录到暂存区，包括子目录&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git add [dir]&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;添加当前目录下的所有文件到暂存区&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加当前目录下的所有文件到暂存区&#34;&gt;#&lt;/a&gt; 添加当前目录下的所有文件到暂存区&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;**git add ***&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;查看添加文件状态&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看添加文件状态&#34;&gt;#&lt;/a&gt; 查看添加文件状态&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;查看在你上次提交之后是否有对文件进行再次修改。&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git status&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;通常使用 -s 参数来获得简短的输出结果&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git status -s&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;提交文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#提交文件&#34;&gt;#&lt;/a&gt; 提交文件&lt;/h2&gt;
+&lt;h3 id=&#34;提交暂存区到本地仓库中&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#提交暂存区到本地仓库中&#34;&gt;#&lt;/a&gt; 提交暂存区到本地仓库中&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git commit -m &amp;quot;提交信息&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;提交暂存区的指定文件到仓库区&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#提交暂存区的指定文件到仓库区&#34;&gt;#&lt;/a&gt; 提交暂存区的指定文件到仓库区&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git commit [file1] [file2] ... -m &amp;quot;提交信息&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;删除文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除文件&#34;&gt;#&lt;/a&gt; 删除文件&lt;/h2&gt;
+&lt;h3 id=&#34;将文件从暂存区和工作区中删除&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#将文件从暂存区和工作区中删除&#34;&gt;#&lt;/a&gt; 将文件从暂存区和工作区中删除&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git rm &amp;lt;file&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;强制删除&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#强制删除&#34;&gt;#&lt;/a&gt; 强制删除&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f，强行从暂存区和工作区中删除修改后的文件&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git rm -f &amp;lt;file&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;如果想把文件从暂存区域移除，但仍然希望保留在当前工作目录，换句话说，仅是从跟踪清单中删除&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git rm --cached &amp;lt;file&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;递归删除&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#递归删除&#34;&gt;#&lt;/a&gt; 递归删除&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;如果后面跟的是一个目录做为参数，则会递归删除整个目录中的所有子目录和文件&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;**git rm -r ***&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;移动文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#移动文件&#34;&gt;#&lt;/a&gt; 移动文件&lt;/h2&gt;
+&lt;p&gt;用于移动或重命名一个文件、目录或软连接。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git mv [file] [newfile]&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果新但文件名已经存在，但还是要重命名它&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git mv -f [file] [newfile]&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;远程操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#远程操作&#34;&gt;#&lt;/a&gt; 远程操作&lt;/h2&gt;
+&lt;h3 id=&#34;下载远程代码并合并&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载远程代码并合并&#34;&gt;#&lt;/a&gt; 下载远程代码并合并&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git pull&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;上传远程代码并合并&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#上传远程代码并合并&#34;&gt;#&lt;/a&gt; 上传远程代码并合并&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;git push&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;解决冲突&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决冲突&#34;&gt;#&lt;/a&gt; 解决冲突&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;shift+!	输入:wq 保存&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;配置密钥&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置密钥&#34;&gt;#&lt;/a&gt; 配置密钥&lt;/h1&gt;
+&lt;h2 id=&#34;创建新的ssh-key&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建新的ssh-key&#34;&gt;#&lt;/a&gt; 创建新的 ssh key&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;输入 ssh-keygen -t rsa -C &amp;quot;&lt;span class=&#34;exturl&#34; data-url=&#34;bWFpbHRvOnlvdXJlbWFpbEB5b3VyZW1haWwuY29t&#34;&gt;youremail@youremail.com&lt;/span&gt;&amp;quot;&lt;/p&gt;
+&lt;p&gt;执行这条命令会如上图提示文件保存路径，可以直接按 Enter，&lt;/p&gt;
+&lt;p&gt;然后提示输入 passphrase（密码），输入两次（可以不输直接两次 Enter），&lt;/p&gt;
+&lt;p&gt;然后会在 .ssh 目录生产两个文件：id_rsa 和 id_rsa.pub&lt;/p&gt;
+&lt;p&gt;用记事本打开.ssh 目录下的 id_rsa.pub 文件，复制里面的内容，或者直接执行命令查看&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;查看密钥&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看密钥&#34;&gt;#&lt;/a&gt; 查看密钥&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ cat ~/.ssh/id_rsa.pub&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或者之间点开文件查看&lt;/p&gt;
+&lt;h2 id=&#34;复制ssh-key到github&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#复制ssh-key到github&#34;&gt;#&lt;/a&gt; 复制 ssh key 到 github&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;On the GitHub site Click “Settings”&lt;/p&gt;
+&lt;p&gt;Click “SSH and GPG Keys”&lt;/p&gt;
+&lt;p&gt;Click “New SSH key”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;测试-ssh-链接-github&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#测试-ssh-链接-github&#34;&gt;#&lt;/a&gt; 测试 ssh 链接 github&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;输入 ssh -T &lt;span class=&#34;exturl&#34; data-url=&#34;bWFpbHRvOmdpdEBnaXRodWIuY29t&#34;&gt;git@github.com&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;出现 Successfully 就表示可以了&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="git" />
+        <updated>2020-12-17T04:36:00.000Z</updated>
+    </entry>
+</feed>

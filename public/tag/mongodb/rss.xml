@@ -1,0 +1,670 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>七音 • Posts by &#34;mongodb&#34; tag</title>
+        <link>https://qiyins.cn</link>
+        <description>路漫漫其修远兮，吾将上下而求索</description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 23 Dec 2020 00:00:00 +0800</pubDate>
+        <lastBuildDate>Wed, 23 Dec 2020 00:00:00 +0800</lastBuildDate>
+        <category>hexo</category>
+        <category>算法</category>
+        <category>Linux</category>
+        <category>MySQL</category>
+        <category>git</category>
+        <category>Idea</category>
+        <category>Typora</category>
+        <category>MongoDB</category>
+        <category>RabbitMQ</category>
+        <category>Redis</category>
+        <category>Java</category>
+        <category>面试题</category>
+        <category>设计模式</category>
+        <category>Shiro</category>
+        <item>
+            <guid isPermalink="true">https://qiyins.cn/computer/course-1/MongoDB/</guid>
+            <title>MongoDB</title>
+            <link>https://qiyins.cn/computer/course-1/MongoDB/</link>
+            <category>MongoDB</category>
+            <pubDate>Wed, 23 Dec 2020 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简介&#34;&gt;#&lt;/a&gt; 简介&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Mongodb 文档数据库，存储的是文档 (Bson&amp;gt;json 的二进制化)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;特点：内部执行引擎为 JS 解释器，把文档存储成 bson 结构，在查询时，转化为就、JS 对象，并可以通过熟悉的 JS 语法来操作&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Mongodb 和传统数据库相比最大的不同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;传统型数据库：结构化数据，定好了表结构后，每一行的内容必是符合表结构的，就是说 - 列的个数，类型都一样&lt;/p&gt;
+&lt;p&gt;Mongodb 文档型数据库：表下的每篇文档都可以有自己独特的结构 (json 对象都可以有自己独特的属性和值)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;下载地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mongodb.com/download-center/community&#34;&gt;&lt;strong&gt;https://www.mongodb.com/download-center/community&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;linux安装mongodb&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#linux安装mongodb&#34;&gt;#&lt;/a&gt; Linux 安装 mongodb&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;下载&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;wget  &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9mYXN0ZGwubW9uZ29kYi5vcmcvbGludXgvbW9uZ29kYi1saW51eC14ODZfNjQtcmhlbDgwLTQuNC4xLnRneg==&#34;&gt;https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel80-4.4.1.tgz&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;解压&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;tar -zxvf mongodb-linux-x86_64-rhel80-4.4.1.tgz&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;将解压包拷贝至指定目录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mv mongodb-linux-x86_64-rhel80-4.4.1 /usr/local/mongodb&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;创建数据存放目录与日志存放目录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mkdir -p /usr/local/mongodb/data /usr/local/mongodb/logs&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;启动 mongodb 服务&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/usr/local/mongodb/bin/mongod –dbpath=/usr/local/mongodb/data –logpath=/usr/local/mongodb/logs/mongodb.log –logappend –port=27017 --fork&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;登录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/usr/local/mongodb/bin/mongo&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;基本操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本操作&#34;&gt;#&lt;/a&gt; 基本操作&lt;/h1&gt;
+&lt;h2 id=&#34;通用操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#通用操作&#34;&gt;#&lt;/a&gt; 通用操作&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;查看数据库&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show databases&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;选择数据库&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Use 数据库名&lt;/p&gt;
+&lt;p&gt;隐式创建：在 mongodb 选择不存在的数据库不会报错，后期当该数据库有数据时，系统会自动创建&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;查看集合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show collections&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;创建集合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db.createCollection (‘集合名’)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;删除集合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.drop ()&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;c增&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#c增&#34;&gt;#&lt;/a&gt; C 增&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.insert (JSON 数据)&lt;/p&gt;
+&lt;p&gt;集合存在 - 则直接插入数据，集合不存在 - 隐式创建，创建时会有默认 id，如需自定义，给插入的 JSON 数据增加_id 键即可覆盖&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;增加多条数据&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(JSON 数据) 变为 ([JSON 数据，JSON 数据]）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;快速插入多条数据&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于 mongodb 底层是 JS 引擎，所以支持部分 JS 语法&lt;/p&gt;
+&lt;p&gt;for(var i = 1; i &amp;lt; n; i++){&lt;/p&gt;
+&lt;p&gt;​	db. 集合名.insert ({name:&amp;quot;a&amp;quot;+i,age:i})&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;r查&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#r查&#34;&gt;#&lt;/a&gt; R 查&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;查询全部数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Db. 集合名.find ()&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;只看 name 列&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.find ({},{name:1})&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;除了 name 列&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.find ({},{name:0})&lt;/p&gt;
+&lt;p&gt;第一个 {} 不填表示查询所有&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;查询固定数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.find ({name:&amp;quot;张三&amp;quot;})&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;查询年龄大于 5 岁的数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.find ({age:{$gt:5}})&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;查询 5,8,10 岁的数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.find ({age:{$in:[5,8,10]}})&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;运算符&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$gt：大于&lt;/p&gt;
+&lt;p&gt;$gte：大于等于&lt;/p&gt;
+&lt;p&gt;$lt：小于&lt;/p&gt;
+&lt;p&gt;$lte：小于等于&lt;/p&gt;
+&lt;p&gt;$ne：不等于&lt;/p&gt;
+&lt;p&gt;$in：in&lt;/p&gt;
+&lt;p&gt;$nin：not in&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;u改&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#u改&#34;&gt;#&lt;/a&gt; U 改&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Db. 集合名.update (条件，新数据，[是否新增，是否修改多条])&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;是否新增&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;指条件匹配不到数据则插入 (true 是插入，false 否不插入默认)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;是否修改多条&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;指将匹配成功的数据都修改 (true 是，false 否默认)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;修改张三的数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.update ({name:&amp;quot;zs1&amp;quot;},{$set:{name:&amp;quot;zs2&amp;quot;}})，不加 set 默认是替换而不是修改&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;将张三的年龄加 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.update ({name:&amp;quot;zs1&amp;quot;},{$inc:{age:1}})&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;修改器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$set：修改列值&lt;/p&gt;
+&lt;p&gt;$inc：递增&lt;/p&gt;
+&lt;p&gt;$rename：重命名列&lt;/p&gt;
+&lt;p&gt;$unset：删除列&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;d删&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#d删&#34;&gt;#&lt;/a&gt; D 删&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.remove ({},[是否删除一条])&lt;/p&gt;
+&lt;p&gt;ture：删除一条，默认 false：全删除&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;拓展操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#拓展操作&#34;&gt;#&lt;/a&gt; 拓展操作&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;格式化数据 pretty ()&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.find ().pretty ()&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;排序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.find ().sort (JSON 数据)&lt;/p&gt;
+&lt;p&gt;键 - 就是要排序的字段的列 / 字段、值：1 升序   -1 降序&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;分页&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.find ().skip (数字).limit (数字)&lt;/p&gt;
+&lt;p&gt;skip 跳过指定条数 (可选)，limit 限制查询的条数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;总结&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.find ()&lt;/p&gt;
+&lt;p&gt;.pretty () 格式化数据&lt;/p&gt;
+&lt;p&gt;.sort ({列：1/-1}) 排序&lt;/p&gt;
+&lt;p&gt;.skip (数字) 跳过指定条数&lt;/p&gt;
+&lt;p&gt;.limit (数字) 限制查询条数&lt;/p&gt;
+&lt;p&gt;.count () 统计总条数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;聚合查询&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#聚合查询&#34;&gt;#&lt;/a&gt; 聚合查询&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;Db.集合名.aggregate([
+    &amp;#123;管道：&amp;#123;表达式&amp;#125;&amp;#125;
+    ……
+])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;常用管道&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常用管道&#34;&gt;#&lt;/a&gt; 常用管道：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;$group&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将集合中的文档进行分组，用于统计结果&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;$match&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;过滤数据，只要输出符合条件的文档&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;$sort&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;聚合数据进一步排序&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;$skip&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;跳过指定文档数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;$limit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;限制集合数据返回文档数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;常用表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常用表达式&#34;&gt;#&lt;/a&gt; 常用表达式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;$sum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;总和  $sum：1 同 count 表示统计&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;$avg&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;平均&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;$min&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最小值&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;$max&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最大值&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;例子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#例子&#34;&gt;#&lt;/a&gt; 例子&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;统计男生女生的总年龄：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;db.集合名.aggregate([
+    &amp;#123;
+        $group:&amp;#123;
+            _id:&amp;quot;$sex&amp;quot;.
+            result:&amp;#123;$sum:&amp;quot;$age&amp;quot;&amp;#125;
+    	&amp;#125;
+    &amp;#125;
+])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;统计男生女生的总人数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;db.集合名.aggregate([
+    &amp;#123;
+        $group:&amp;#123;
+            _id:&amp;quot;$sex&amp;quot;,
+            num:&amp;#123;$sum:1&amp;#125;
+        &amp;#125;
+    &amp;#125;
+])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;求学生总数和平均年龄&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;db.集合名.aggregate([
+    &amp;#123;
+        $group:&amp;#123;
+            _id:null,
+            Total_num:&amp;#123;$sum:1&amp;#125;,
+            Avg_age:&amp;#123;$avg:&amp;quot;age&amp;quot;&amp;#125;
+        &amp;#125;
+    &amp;#125;
+])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;查询男生女生人数，按人数排序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;db.集合名.aggregate([
+    &amp;#123;
+        $group:&amp;#123;
+            _id:&amp;quot;$sex&amp;quot;,
+            num:&amp;#123;$sum:1&amp;#125;
+        &amp;#125;
+    &amp;#125;,
+    &amp;#123;
+        $sort:&amp;#123;
+            num:1//升序
+        &amp;#125;
+    &amp;#125;
+])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;索引&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#索引&#34;&gt;#&lt;/a&gt; 索引&lt;/h1&gt;
+&lt;h2 id=&#34;创建索引&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建索引&#34;&gt;#&lt;/a&gt; 创建索引&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Db. 集合名.createIndex (待创建索引的列，[额外选项])&lt;/p&gt;
+&lt;p 键：1，…，键：-1=&#34;&#34;&gt;待创建索引的列：&lt;/p&gt;
+&lt;p&gt;说明：1 升序 - 1 降序      例：{age：1} 表示创建 age 索引并按照升序的方式存储&lt;/p&gt;
+&lt;p&gt;额外选项：设置索引的名称或唯一索引&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;删除索引&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除索引&#34;&gt;#&lt;/a&gt; 删除索引&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;全部删除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.dropIndexes ()&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;删除指定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db. 集合名.dropIndex (索引名)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;查看索引&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看索引&#34;&gt;#&lt;/a&gt; 查看索引&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Db. 集合名.getIndexes ()&lt;/p&gt;
+&lt;p&gt;显示出来的 key：给哪个列设置了索引&lt;/p&gt;
+&lt;p&gt;显示出来的 name：表示索引名称，默认系统生成，也可以自定义&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;给索引取名&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#给索引取名&#34;&gt;#&lt;/a&gt; 给索引取名&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Db. 集合名.createIndex ({“键 &amp;quot;：“值&amp;quot;}，{键：“名称 &amp;quot;})&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;添加唯一索引&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加唯一索引&#34;&gt;#&lt;/a&gt; 添加唯一索引&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Db. 集合名.createIndex ({“键 &amp;quot;：“值&amp;quot;}，{unique：“键 &amp;quot;})&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;分析索引&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分析索引&#34;&gt;#&lt;/a&gt; 分析索引&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Db. 集合名.find ().explain (“executionStats&amp;quot;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;权限机制&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#权限机制&#34;&gt;#&lt;/a&gt; 权限机制&lt;/h1&gt;
+&lt;h2 id=&#34;创建账号&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建账号&#34;&gt;#&lt;/a&gt; 创建账号&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;Use admin
+db.createUser(&amp;#123;
+ &amp;quot;user&amp;quot;:&amp;quot;admin&amp;quot;,
+ &amp;quot;pwd&amp;quot;:&amp;quot;admin&amp;quot;,
+ &amp;quot;roles&amp;quot;:[&amp;#123;
+     role:&amp;quot;root&amp;quot;,
+     db:&amp;quot;admin&amp;quot;
+ &amp;#125;]
+&amp;#125;) 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;角色&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#角色&#34;&gt;#&lt;/a&gt; 角色&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;角色种类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;超级用户角色：root&lt;/p&gt;
+&lt;p&gt;数据库用户角色：read、readwrite；&lt;/p&gt;
+&lt;p&gt;数据库管理角色：dbAdmin、userAdmin；&lt;/p&gt;
+&lt;p&gt;集群管理角色：clusterAdmin、clusterManager、ClusterMonitor、hostManager；&lt;/p&gt;
+&lt;p&gt;备份恢复角色：backup、restore；&lt;/p&gt;
+&lt;p&gt;所有数据库角色：readAnyDatabase、readWriterAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase；&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;角色说明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;root：只在 admin 数据库中可用。超级账号、超级权限；&lt;/p&gt;
+&lt;p&gt;read：允许用户读取指定数据库；&lt;/p&gt;
+&lt;p&gt;readWriter：允许用户读写指定数据库&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;开启验证模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开启验证模式&#34;&gt;#&lt;/a&gt; 开启验证模式&lt;/h2&gt;
+&lt;h3 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;指用户需要输入账号密码才能登录使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;操作步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#操作步骤&#34;&gt;#&lt;/a&gt; 操作步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;添加超级管理员&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption data-lang=&#34;SQL&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;Use&lt;/span&gt; admin&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;db&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;createUser&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token string&#34;&gt;&#34;user&#34;&lt;/span&gt;:&lt;span class=&#34;token string&#34;&gt;&#34;admin&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token string&#34;&gt;&#34;pwd&#34;&lt;/span&gt;:&lt;span class=&#34;token string&#34;&gt;&#34;admin&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token string&#34;&gt;&#34;roles&#34;&lt;/span&gt;:&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        role:&lt;span class=&#34;token string&#34;&gt;&#34;root&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        db:&lt;span class=&#34;token string&#34;&gt;&#34;admin&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &amp;#125;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#125;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;退出卸载服务&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Linux：mongod --shutdown&lt;/p&gt;
+&lt;p&gt;Window：Mongod --remove&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;重新安装需要输入账号密码的服务 (注：在原安装命令基础上加上 —auth 即可)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Linux：bin 目录下&lt;/p&gt;
+&lt;p&gt;./mongod --dbpath=/usr/local/mongodb/data --logpath= /usr/local/mongodb/logs/mongodb.log --auth --logappend --port=27017 –fork&lt;/p&gt;
+&lt;p&gt;Window：bin 目录下&lt;/p&gt;
+&lt;p&gt;mongod --install --dbpath (data 路径) --logpath (log 路径) –auth&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;启动服务 -&amp;gt; 登录测试&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Linux：bin 目录下./mongo&lt;/p&gt;
+&lt;p&gt;Windows：net start mongodb 再输入 mongo 启动&lt;/p&gt;
+&lt;p&gt;直接启动 show dbs 看不到任何东西&lt;/p&gt;
+&lt;p&gt;方法 1：mongo 服务 ip 地址：端口号 / 数据库 -u 用户名 -p 密码&lt;/p&gt;
+&lt;p&gt;方法 2：先登录，选择数据库，输入 db.auth (用户名，密码)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;例子-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#例子-2&#34;&gt;#&lt;/a&gt; 例子&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;添加用户 shop1 可以读 shop 数据库&lt;/p&gt;
+&lt;p&gt;添加用户 shop2 可以读写 shop 数据库&lt;/p&gt;
+&lt;p&gt;注意：必须在对应数据库创建用户&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;准备测试数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;use shop
+for(var i = 1 ;i &amp;lt;= 10;i++)&amp;#123;
+	db.goods.insert(&amp;#123;
+        &amp;quot;name&amp;quot;:&amp;quot;goodsName&amp;quot;+i,
+        &amp;quot;price&amp;quot;:i
+	&amp;#125;)
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;查看添加的数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db.goods.find()&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;添加用户并设置权限&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;use shop
+db.createUser(&amp;#123;
+    &amp;quot;user&amp;quot;:&amp;quot;shop1&amp;quot;,
+    &amp;quot;pwd&amp;quot;:&amp;quot;shop1&amp;quot;,
+    &amp;quot;roles&amp;quot;:[&amp;#123;
+    	role:&amp;quot;read&amp;quot;,
+    	db:&amp;quot;shop&amp;quot;
+    &amp;#125;]
+&amp;#125;)
+db.createUser(&amp;#123;
+    &amp;quot;user&amp;quot;:&amp;quot;shop2&amp;quot;,
+    &amp;quot;pwd&amp;quot;:&amp;quot;shop2&amp;quot;,
+    &amp;quot;roles&amp;quot;:[&amp;#123;
+    	role:&amp;quot;readWrite&amp;quot;,
+    	db:&amp;quot;shop&amp;quot;
+    &amp;#125;]
+&amp;#125;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;查看添加的用户&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;use admin&lt;/p&gt;
+&lt;p&gt;db.system.users.find().pretty()&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;登入 shop1 账号&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mongo localhost:27017/shop -u shop1 -p shop1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;查看数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db.goods.find()&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;尝试插入数据（会报错就对了）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;db.goods.insert(&amp;#123;
+	&amp;quot;name&amp;quot;:&amp;quot;goodsName11&amp;quot;,
+	&amp;quot;price&amp;quot;:11
+&amp;#125;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;登入 shop2 账号&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mongo localhost:27017/shop -u shop2 -p shop2&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;查看数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db.goods.find()&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;尝试插入数据（插入成功）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;db.goods.insert(&amp;#123;
+	&amp;quot;name&amp;quot;:&amp;quot;goodsName11&amp;quot;,
+	&amp;quot;price&amp;quot;:11
+&amp;#125;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;备份还原&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#备份还原&#34;&gt;#&lt;/a&gt; 备份还原&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;备份与还原都在 bin 目录下执行命令&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;备份语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#备份语法&#34;&gt;#&lt;/a&gt; 备份语法&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mongodump -h -port -u -p -d -o&lt;/p&gt;
+&lt;p&gt;-h：host 服务器 IP 地址 (一般不写，默认本机)&lt;/p&gt;
+&lt;p&gt;-port：   端口 (一般不写，默认 27017)&lt;/p&gt;
+&lt;p&gt;-u：user  账号&lt;/p&gt;
+&lt;p&gt;-p：pwd  密码&lt;/p&gt;
+&lt;p&gt;-d：databse 数据库 (数据库不写则导出全部)&lt;/p&gt;
+&lt;p&gt;-o：open 备份到指定目录下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;例子-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#例子-3&#34;&gt;#&lt;/a&gt; 例子&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;备份所有数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mongodump -u admin -p admin -o 备份目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;备份指定数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mongodump -u shop1 -p shop1 -d shop -o 备份目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;还原语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#还原语法&#34;&gt;#&lt;/a&gt; 还原语法&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mongorestore -h -port -u -p -d --drop 备份数据目录&lt;/p&gt;
+&lt;p&gt;-d 不写则还原全部数据&lt;/p&gt;
+&lt;p&gt;--drop 先删除数据库再导入&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;例子-4&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#例子-4&#34;&gt;#&lt;/a&gt; 例子&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;还原所有数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先删除两个数据库&lt;/p&gt;
+&lt;p&gt;use test1，db.dropDatabse()，use test2()，db.dropDatabase()&lt;/p&gt;
+&lt;p&gt;查看剩下的数据库 show dbs&lt;/p&gt;
+&lt;p&gt;还原数据 mongorestore -u admin -p admin --drop&lt;/p&gt;
+&lt;p&gt;备份数据目录，重新登录查看效果&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;还原指定数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mongorestore -u shop2 -p shop2 -d shop –drop 备份目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;java连接mongodb&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java连接mongodb&#34;&gt;#&lt;/a&gt; Java 连接 mongodb&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;查看 mongodb 占用的端口&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ps -ef | grep mongodb&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;关掉 mongodb&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;kill -9 端口&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;开启 mongodb 服务&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;传教 mongo-start.sh 文件并编辑&lt;/p&gt;
+&lt;p&gt;./mongod --dbpath=/usr/local/mongodb/data --logpath= /usr/local/mongodb/logs/mongodb.log --auth --logappend --port=27017 --bind_ip=0.0.0.0 (设置为所有人可访问) --fork&lt;/p&gt;
+&lt;p&gt;将该文件设置为可执行文件，chmod +x &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21vbmdvLXN0YXJ0LnNo&#34;&gt;mongo-start.sh&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;执行./mongo-start 开启服务&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;在 java 端连接测试&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;导入 pom 依赖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight xml&#34;&gt;&lt;figcaption data-lang=&#34;XML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;dependency&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;groupId&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;org.mongodb&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;groupId&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;artifactId&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;mongodb-driver&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;artifactId&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;version&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;3.8.2&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;version&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;dependency&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
+&lt;li&gt;未设置账号密码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 创建连接&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;MongoClient&lt;/span&gt; client &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;MongoClient&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;IP地址&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 获取操作的数据库&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;MongoDatabase&lt;/span&gt; test1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; client&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getDatabase&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;数据库名&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 获取集合&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;MongoCollection&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Document&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; collection &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; test1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getCollection&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;集合名&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 获取文档的内容&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;FindIterable&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Document&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; documents &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; collection&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Document&lt;/span&gt; document &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; documents&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;字段&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;client&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
+&lt;li&gt;设置账号密码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 设置服务器地址和端口号&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;ServerAddress&lt;/span&gt; serverAddress &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ServerAddress&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;IP地址&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; 端口号&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 设置用户名、数据库名称、密码&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;MongoCredential&lt;/span&gt; credential &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;MongoCredential&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;createCredential&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;admin&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;admin&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;admin&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toCharArray&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 通过连接认证获取连接&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;MongoClientOptions&lt;/span&gt; build &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;MongoClientOptions&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;builder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;MongoClient&lt;/span&gt; client &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;MongoClient&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;serverAddress&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; credential&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; build&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 获取操作的数据库&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;MongoDatabase&lt;/span&gt; test1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; client&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getDatabase&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;数据库名&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 获取集合&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;MongoCollection&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Document&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; collection &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; test1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getCollection&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;集合名&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 获取文档的内容&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;FindIterable&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Document&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; documents &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; collection&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Document&lt;/span&gt; document &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; documents&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;字段&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;client&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;springboot连接mongodb&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springboot连接mongodb&#34;&gt;#&lt;/a&gt; SpringBoot 连接 MongoDB&lt;/h1&gt;
+&lt;h2 id=&#34;applicationyml&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#applicationyml&#34;&gt;#&lt;/a&gt; application.yml&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;不带密码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;spring&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;mongodb&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;database&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 数据库&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;host&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; IP地址&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
+&lt;li&gt;密码访问&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;spring&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;mongodb&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;database&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 数据库&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;host&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; IP地址&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 用户名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 密码&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;authentication-database&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 用户名绑定的数据库(admin)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+    </channel>
+</rss>
