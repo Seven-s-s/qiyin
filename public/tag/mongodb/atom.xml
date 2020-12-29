@@ -8,16 +8,17 @@
     <category term="算法" />
     <category term="Linux" />
     <category term="MySQL" />
+    <category term="MongoDB" />
+    <category term="Redis" />
     <category term="git" />
     <category term="Idea" />
     <category term="Typora" />
-    <category term="MongoDB" />
-    <category term="RabbitMQ" />
-    <category term="Redis" />
     <category term="Java" />
     <category term="面试题" />
+    <category term="RabbitMQ" />
     <category term="设计模式" />
     <category term="Shiro" />
+    <category term="SpringCloud" />
     <entry>
         <id>https://qiyins.cn/computer/course-1/MongoDB/</id>
         <title>MongoDB</title>

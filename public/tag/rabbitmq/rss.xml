@@ -11,16 +11,17 @@
         <category>算法</category>
         <category>Linux</category>
         <category>MySQL</category>
+        <category>MongoDB</category>
+        <category>Redis</category>
         <category>git</category>
         <category>Idea</category>
         <category>Typora</category>
-        <category>MongoDB</category>
-        <category>RabbitMQ</category>
-        <category>Redis</category>
         <category>Java</category>
         <category>面试题</category>
+        <category>RabbitMQ</category>
         <category>设计模式</category>
         <category>Shiro</category>
+        <category>SpringCloud</category>
         <item>
             <guid isPermalink="true">https://qiyins.cn/computer/course-1/RabbitMQ/</guid>
             <title>RabbitMQ</title>

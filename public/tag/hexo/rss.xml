@@ -21,6 +21,7 @@
         <category>RabbitMQ</category>
         <category>设计模式</category>
         <category>Shiro</category>
+        <category>SpringCloud</category>
         <item>
             <guid isPermalink="true">https://qiyins.cn/computer/Hexo/</guid>
             <title>hexo的使用</title>
@@ -103,7 +104,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;hexo server&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;基于宝塔面板意见部署hexo博客&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基于宝塔面板意见部署hexo博客&#34;&gt;#&lt;/a&gt; 基于宝塔面板意见部署 hexo 博客&lt;/h2&gt;
+&lt;h2 id=&#34;基于宝塔面板一键部署hexo博客&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基于宝塔面板一键部署hexo博客&#34;&gt;#&lt;/a&gt; 基于宝塔面板一键部署 hexo 博客&lt;/h2&gt;
 &lt;h3 id=&#34;创建git用户&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建git用户&#34;&gt;#&lt;/a&gt; 创建 git 用户&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -166,16 +167,10 @@
 &lt;p&gt;修改权限&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;chmod 755 ~&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
 &lt;p&gt;chmod 700 ~/.ssh&lt;/p&gt;
 &lt;p&gt;chmod 600 ~/.ssh/authorized_keys&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;ul&gt;
+&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;测试本地连接服务器（在本地电脑 git bash here）&lt;/p&gt;
 &lt;blockquote&gt;
@@ -187,6 +182,8 @@
 &lt;p&gt;如果出现 Welcome to xxx 则表示连接成功&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;创建git仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建git仓库&#34;&gt;#&lt;/a&gt; 创建 git 仓库&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
