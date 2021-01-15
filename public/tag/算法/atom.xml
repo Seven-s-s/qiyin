@@ -9,7 +9,6 @@
     <category term="Linux" />
     <category term="MySQL" />
     <category term="MongoDB" />
-    <category term="Redis" />
     <category term="git" />
     <category term="Idea" />
     <category term="Typora" />
@@ -18,6 +17,7 @@
     <category term="RabbitMQ" />
     <category term="设计模式" />
     <category term="Shiro" />
+    <category term="Redis" />
     <category term="SpringCloud" />
     <entry>
         <id>https://qiyins.cn/computer/algorithm/</id>

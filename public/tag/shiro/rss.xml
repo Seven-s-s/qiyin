@@ -12,7 +12,6 @@
         <category>Linux</category>
         <category>MySQL</category>
         <category>MongoDB</category>
-        <category>Redis</category>
         <category>git</category>
         <category>Idea</category>
         <category>Typora</category>
@@ -21,6 +20,7 @@
         <category>RabbitMQ</category>
         <category>设计模式</category>
         <category>Shiro</category>
+        <category>Redis</category>
         <category>SpringCloud</category>
         <item>
             <guid isPermalink="true">https://qiyins.cn/computer/course-1/Shiro/</guid>
